@@ -2,6 +2,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
+> 本仓库 fork 自 [heshuhuan6/-x-fans-count](https://github.com/heshuhuan6/-x-fans-count)（MIT），由 [@HunziDaily](https://x.com/HunziDaily) 维护优化：适配 X 新版页面、修复首屏不显示、新增关注/粉丝列表徽章（v1.1.3）。
+
 > 在 X 的信息流和用户列表中，直接显示每个账号的粉丝数。
 > Show follower counts directly in the X timeline and user lists.
 
@@ -29,7 +31,7 @@ X 网页自己发出的 GraphQL 请求里，本来就带了每个用户的 `foll
 
 **安装**
 
-1. 下载本仓库代码（点击 Code → Download ZIP 后解压，或 `git clone https://github.com/heshuhuan6/-x-fans-count.git`）；
+1. 下载本仓库代码（点击 Code → Download ZIP 后解压，或 `git clone https://github.com/Marshal-YH/-x-fans-count.git`）；
 2. 打开 `chrome://extensions`，右上角开启「开发者模式」；
 3. 点击「加载已解压的扩展程序」，选择解压后的文件夹；
 4. 需要 Chrome 111 及以上（用到了 Manifest V3 的 `world: "MAIN"` 注入）。
@@ -86,7 +88,7 @@ It only reads X's own network responses, sends nothing anywhere else, and reques
 
 **Install**
 
-1. Download this repo (Code → Download ZIP and unzip, or `git clone https://github.com/heshuhuan6/-x-fans-count.git`);
+1. Download this repo (Code → Download ZIP and unzip, or `git clone https://github.com/Marshal-YH/-x-fans-count.git`);
 2. Open `chrome://extensions` and enable "Developer mode" (top right);
 3. Click "Load unpacked" and select the unzipped folder;
 4. Requires Chrome 111+ (uses Manifest V3 `world: "MAIN"` injection).
@@ -118,3 +120,14 @@ It only reads X's own network responses, sends nothing anywhere else, and reques
 ### License
 
 MIT — see [LICENSE](LICENSE).
+
+---
+
+## v1.1.0 优化版说明
+
+本目录为基于原仓库 commit 8738895 的优化副本，改动见上级目录的 `优化说明.md`。
+新增：引用推文/对话串回复也显示、悬停显示正在关注数和粉丝/关注比、非中文界面显示 12K/1.2M、Alt+Shift+F 临时隐藏徽标。仍然零权限、零外部请求。
+
+## v1.1.3（2026-10-11）
+
+支持关注 / 粉丝 / 认证粉丝列表、点赞和转帖用户列表、「推荐关注」等用户列表：每个用户的显示名和蓝标后面显示「粉丝 N」胶囊徽章。每个用户只显示一个。XHR 拦截也做了加固。权限、网络请求、安全原则都和以前一样。

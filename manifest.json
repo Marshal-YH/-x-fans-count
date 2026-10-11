@@ -1,1 +1,31 @@
-{"content_scripts":[{"js":["inject.js"],"matches":["https://x.com/*","https://twitter.com/*"],"run_at":"document_start","world":"MAIN"},{"js":["content.js"],"matches":["https://x.com/*","https://twitter.com/*"],"run_at":"document_idle","world":"ISOLATED"}],"description":"在 X 信息流、关注者列表中直接显示每个账号的粉丝数。数据取自 X 网页自身请求里的 followers_count 字段，无需 API Key。","manifest_version":3,"name":"X 粉丝数显示","version":"1.0.0"}
+{
+  "manifest_version": 3,
+  "name": "X 粉丝数显示",
+  "version": "1.1.3",
+  "description": "在 X 信息流、关注者列表中直接显示每个账号的粉丝数。数据取自 X 网页自身请求里的 followers_count 字段，无需 API Key，不发任何外部请求。",
+  "minimum_chrome_version": "111",
+  "content_scripts": [
+    {
+      "js": [
+        "inject.js"
+      ],
+      "matches": [
+        "https://x.com/*",
+        "https://twitter.com/*"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "js": [
+        "content.js"
+      ],
+      "matches": [
+        "https://x.com/*",
+        "https://twitter.com/*"
+      ],
+      "run_at": "document_start",
+      "world": "ISOLATED"
+    }
+  ]
+}
